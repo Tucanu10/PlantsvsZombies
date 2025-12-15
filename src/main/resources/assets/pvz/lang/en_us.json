@@ -1,0 +1,13 @@
+{
+  "itemGroup.pvz": "Example Mod Tab",
+  "block.pvz.example_block": "Example Block",
+  "item.pvz.example_item": "Example Item",
+
+  "pvz.configuration.title": "Plants vs Zombies Configs",
+  "pvz.configuration.section.pvz.common.toml": "Plants vs Zombies Configs",
+  "pvz.configuration.section.pvz.common.toml.title": "Plants vs Zombies Configs",
+  "pvz.configuration.items": "Item List",
+  "pvz.configuration.logDirtBlock": "Log Dirt Block",
+  "pvz.configuration.magicNumberIntroduction": "Magic Number Text",
+  "pvz.configuration.magicNumber": "Magic Number"
+}
