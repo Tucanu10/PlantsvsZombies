@@ -1,7 +1,9 @@
 {
-  "itemGroup.pvz": "Example Mod Tab",
-  "block.pvz.example_block": "Example Block",
-  "item.pvz.example_item": "Example Item",
+  "itemGroup.pvz": "Plants vs Zombies",
+  "item.pvz.pea": "Pea",
+  "item.pvz.pea_shooter": "Pea Shooter",
+  "item.pvz.potato_mine": "Potato Mine",
+  "item.pvz.wallnut": "Wallnut",
 
   "pvz.configuration.title": "Plants vs Zombies Configs",
   "pvz.configuration.section.pvz.common.toml": "Plants vs Zombies Configs",
