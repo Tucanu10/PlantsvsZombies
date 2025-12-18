@@ -1,22 +1,15 @@
 package dev.tucanu.pvz;
 
 import com.mojang.logging.LogUtils;
-import dev.tucanu.pvz.entity.client.PeaShooter.PeaShooterRenderer;
-import dev.tucanu.pvz.entity.client.PotatoMine.PotatoMineRenderer;
-import dev.tucanu.pvz.entity.client.Wallnut.WallnutRenderer;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -46,9 +39,8 @@ public class PlantsvsZombies {
         BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
         ModItems.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
-        CREATIVE_MODE_TABS.register(modEventBus);
-
+        // Register the creative tab
+        ModCreativeTab.register(modEventBus);
         ModEntities.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
@@ -79,20 +71,5 @@ public class PlantsvsZombies {
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
-    }
-
-    @EventBusSubscriber(modid = PlantsvsZombies.MODID, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-
-            EntityRenderers.register(ModEntities.POTATO_MINE.get(), PotatoMineRenderer::new);
-            EntityRenderers.register(ModEntities.PEA_SHOOTER.get(), PeaShooterRenderer::new);
-            EntityRenderers.register(ModEntities.WALLNUT.get(), WallnutRenderer::new);
-        }
     }
 }

@@ -36,7 +36,14 @@ public class PlantEntity extends Animal
     protected void registerGoals()
     {
         this.goalSelector.addGoal(0, new LookAtPlayerGoal(this, Monster.class, 15));
-        this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Monster.class, true, entity -> entity instanceof Enemy));
+        this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>
+                (this, Monster.class, true, entity -> entity instanceof Enemy));
+    }
+
+    @Override
+    public boolean isPushable()
+    {
+        return false;
     }
 
     @Override

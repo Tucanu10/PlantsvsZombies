@@ -2,23 +2,30 @@ package dev.tucanu.pvz.event;
 
 import dev.tucanu.pvz.ModEntities;
 import dev.tucanu.pvz.PlantsvsZombies;
-import dev.tucanu.pvz.entity.client.PotatoMine.PotatoMineModel;
-import dev.tucanu.pvz.entity.client.PeaShooter.PeaShooterModel;
 import dev.tucanu.pvz.entity.custom.PeaShooterEntity;
+import dev.tucanu.pvz.entity.custom.PlantEntity;
 import dev.tucanu.pvz.entity.custom.PotatoMineEntity;
+import dev.tucanu.pvz.entity.custom.WallnutEntity;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.monster.Monster;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 
 @EventBusSubscriber(modid = PlantsvsZombies.MODID)
 public class ModEventBusEvents
 {
     @SubscribeEvent
-    public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event)
+    public static void onZombieSpawn(EntityJoinLevelEvent event)
     {
-        event.registerLayerDefinition(PotatoMineModel.LAYER_LOCATION, PotatoMineModel::createBodyLayer);
-        event.registerLayerDefinition(PeaShooterModel.LAYER_LOCATION, PeaShooterModel::createBodyLayer);
+        if(event.getEntity() instanceof Monster monster)
+        {
+            monster.targetSelector.addGoal(3,
+                    new NearestAttackableTargetGoal<>(
+                            monster, PlantEntity.class,
+                            true));
+        }
     }
 
     @SubscribeEvent
@@ -26,5 +33,6 @@ public class ModEventBusEvents
     {
         event.put(ModEntities.POTATO_MINE.get(), PotatoMineEntity.createAttributes().build());
         event.put(ModEntities.PEA_SHOOTER.get(), PeaShooterEntity.createAttributes().build());
+        event.put(ModEntities.WALLNUT.get(), WallnutEntity.createAttributes().build());
     }
 }

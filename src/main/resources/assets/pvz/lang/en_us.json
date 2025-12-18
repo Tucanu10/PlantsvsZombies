@@ -4,7 +4,9 @@
   "item.pvz.pea_shooter": "Pea Shooter",
   "item.pvz.potato_mine": "Potato Mine",
   "item.pvz.wallnut": "Wallnut",
+  "item.pvz.ceramic_pot": "Pot",
 
+  "item.pvz.ceramic_pot.desc" : "Ever play a game called Whack-a-Zombie?",
   "pvz.configuration.title": "Plants vs Zombies Configs",
   "pvz.configuration.section.pvz.common.toml": "Plants vs Zombies Configs",
   "pvz.configuration.section.pvz.common.toml.title": "Plants vs Zombies Configs",

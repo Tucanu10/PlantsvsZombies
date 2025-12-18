@@ -1,6 +1,7 @@
 package dev.tucanu.pvz;
 
 
+import dev.tucanu.pvz.item.armor.CeramicPotArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SnowballItem;
 import net.neoforged.bus.api.IEventBus;
@@ -40,6 +41,8 @@ public class ModItems
     public static final DeferredHolder<Item, SnowballItem> PEA = ITEMS.register("pea",
             () -> new SnowballItem(new Item.Properties().stacksTo(64)));
 
+    public static final DeferredHolder<Item, CeramicPotArmorItem> CERAMIC_POT = ITEMS.register("ceramic_pot",
+            () -> new CeramicPotArmorItem(new Item.Properties()));
 
     public static void register(IEventBus bus)
     {

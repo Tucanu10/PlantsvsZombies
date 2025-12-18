@@ -14,7 +14,8 @@ import net.minecraft.resources.ResourceLocation;
 public class WallnutModel<T extends PlantEntity> extends EntityModel<T>
 {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(PlantsvsZombies.MODID, "wallnut"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new
+			ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(PlantsvsZombies.MODID, "wallnut"), "main");
 	private final ModelPart body;
 
 	public WallnutModel(ModelPart root) {
