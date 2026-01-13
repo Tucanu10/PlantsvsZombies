@@ -2,10 +2,7 @@ package dev.tucanu.pvz.event;
 
 import dev.tucanu.pvz.ModEntities;
 import dev.tucanu.pvz.PlantsvsZombies;
-import dev.tucanu.pvz.entity.custom.PeaShooterEntity;
-import dev.tucanu.pvz.entity.custom.PlantEntity;
-import dev.tucanu.pvz.entity.custom.PotatoMineEntity;
-import dev.tucanu.pvz.entity.custom.WallnutEntity;
+import dev.tucanu.pvz.entity.custom.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -34,5 +31,7 @@ public class ModEventBusEvents
         event.put(ModEntities.POTATO_MINE.get(), PotatoMineEntity.createAttributes().build());
         event.put(ModEntities.PEA_SHOOTER.get(), PeaShooterEntity.createAttributes().build());
         event.put(ModEntities.WALLNUT.get(), WallnutEntity.createAttributes().build());
+        event.put(ModEntities.CHERRY_BOMB.get(), CherryBombEntity.createAttributes().build());
+        event.put(ModEntities.SUNFLOWER.get(), SunflowerEntity.createAttributes().build());
     }
 }

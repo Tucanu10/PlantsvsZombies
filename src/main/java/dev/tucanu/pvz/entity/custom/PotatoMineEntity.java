@@ -18,7 +18,7 @@ public class PotatoMineEntity extends PlantEntity {
     private static final EntityDataAccessor<Boolean> DATA_IS_PRIMED = SynchedEntityData.defineId(PotatoMineEntity.class, EntityDataSerializers.BOOLEAN);
 
     private boolean exploded = false;
-    private int primingTimer = 60; // 60 ticks = 3 seconds
+    private int primingTimer = 20; // 20 ticks = 1 second
 
     public PotatoMineEntity(EntityType<? extends PlantEntity> type, Level level) {
         super(type, level);

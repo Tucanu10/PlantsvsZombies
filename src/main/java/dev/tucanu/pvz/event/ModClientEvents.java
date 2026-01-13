@@ -3,10 +3,14 @@ package dev.tucanu.pvz.event;
 import dev.tucanu.pvz.ModEntities;
 import dev.tucanu.pvz.ModItems;
 import dev.tucanu.pvz.PlantsvsZombies;
+import dev.tucanu.pvz.entity.client.CherryBomb.CherryBombModel;
+import dev.tucanu.pvz.entity.client.CherryBomb.CherryBombRenderer;
 import dev.tucanu.pvz.entity.client.PeaShooter.PeaShooterModel;
 import dev.tucanu.pvz.entity.client.PeaShooter.PeaShooterRenderer;
 import dev.tucanu.pvz.entity.client.PotatoMine.PotatoMineModel;
 import dev.tucanu.pvz.entity.client.PotatoMine.PotatoMineRenderer;
+import dev.tucanu.pvz.entity.client.Sunflower.SunflowerModel;
+import dev.tucanu.pvz.entity.client.Sunflower.SunflowerRenderer;
 import dev.tucanu.pvz.entity.client.Wallnut.WallnutModel;
 import dev.tucanu.pvz.entity.client.Wallnut.WallnutRenderer;
 import dev.tucanu.pvz.item.armor.client.ArmorClientExtension;
@@ -33,6 +37,8 @@ public class ModClientEvents {
         event.registerLayerDefinition(PeaShooterModel.LAYER_LOCATION, PeaShooterModel::createBodyLayer);
         event.registerLayerDefinition(PotatoMineModel.LAYER_LOCATION, PotatoMineModel::createBodyLayer);
         event.registerLayerDefinition(WallnutModel.LAYER_LOCATION, WallnutModel::createBodyLayer);
+        event.registerLayerDefinition(CherryBombModel.LAYER_LOCATION, CherryBombModel::createBodyLayer);
+        event.registerLayerDefinition(SunflowerModel.LAYER_LOCATION, SunflowerModel::createBodyLayer);
     }
 
     @SubscribeEvent
@@ -40,5 +46,7 @@ public class ModClientEvents {
         event.registerEntityRenderer(ModEntities.PEA_SHOOTER.get(), PeaShooterRenderer::new);
         event.registerEntityRenderer(ModEntities.POTATO_MINE.get(), PotatoMineRenderer::new);
         event.registerEntityRenderer(ModEntities.WALLNUT.get(), WallnutRenderer::new);
+        event.registerEntityRenderer(ModEntities.CHERRY_BOMB.get(), CherryBombRenderer::new);
+        event.registerEntityRenderer(ModEntities.SUNFLOWER.get(), SunflowerRenderer::new);
     }
 }

@@ -109,7 +109,7 @@ public class PeaShooterEntity extends PlantEntity implements RangedAttackMob
         Direction facing = this.getDirection();
 
         // Shoot straight along the axis
-        pea.shoot(facing.getStepX(), 0.1, facing.getStepZ(), 1.6F, 0.0F);
+        pea.shoot(facing.getStepX(), 0.3, facing.getStepZ(), 1.6F, 0.0F);
 
         this.playSound(SoundEvents.SNOW_GOLEM_SHOOT, 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level().addFreshEntity(pea);

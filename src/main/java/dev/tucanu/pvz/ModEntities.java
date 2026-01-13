@@ -1,8 +1,6 @@
 package dev.tucanu.pvz;
 
-import dev.tucanu.pvz.entity.custom.WallnutEntity;
-import dev.tucanu.pvz.entity.custom.PeaShooterEntity;
-import dev.tucanu.pvz.entity.custom.PotatoMineEntity;
+import dev.tucanu.pvz.entity.custom.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -20,6 +18,17 @@ public class ModEntities
             () -> EntityType.Builder.of(PotatoMineEntity::new, MobCategory.CREATURE)
                     .sized(0.6f, 0.5f)
                     .build("potato_mine"));
+    public static final DeferredHolder<EntityType<?>, EntityType<CherryBombEntity>> CHERRY_BOMB =
+            ENTITY_TYPES.register("cherry_bomb",
+            () -> EntityType.Builder.of(CherryBombEntity::new, MobCategory.CREATURE)
+                    .sized(0.6f, 0.7f)
+                    .build("cherry_bomb"));
+
+    public static DeferredHolder<EntityType<?>, EntityType<SunflowerEntity>> SUNFLOWER =
+            ENTITY_TYPES.register("sunflower",
+            () -> EntityType.Builder.of(SunflowerEntity::new, MobCategory.CREATURE)
+                    .sized(0.6f, 1f)
+                    .build("sunflower"));
 
     public static DeferredHolder<EntityType<?>, EntityType<PeaShooterEntity>> PEA_SHOOTER =
             ENTITY_TYPES.register("pea_shooter",
