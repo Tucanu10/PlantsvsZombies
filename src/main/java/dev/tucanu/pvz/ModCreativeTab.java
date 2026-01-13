@@ -22,6 +22,8 @@ public class ModCreativeTab {
                         output.accept(ModItems.WALLNUT.get());
                         output.accept(ModItems.POTATO_MINE.get());
                         output.accept(ModItems.PEA_SHOOTER.get());
+                        output.accept(ModItems.CHERRY_BOMB.get());
+                        output.accept(ModItems.SUNFLOWER.get());
                     }).build());
 
     public static void register(IEventBus bus) {

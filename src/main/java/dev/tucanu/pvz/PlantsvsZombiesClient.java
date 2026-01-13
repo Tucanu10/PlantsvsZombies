@@ -1,5 +1,6 @@
 package dev.tucanu.pvz;
 
+import dev.tucanu.pvz.entity.client.CherryBomb.CherryBombRenderer;
 import dev.tucanu.pvz.entity.client.PeaShooter.PeaShooterRenderer;
 import dev.tucanu.pvz.entity.client.PotatoMine.PotatoMineRenderer;
 import dev.tucanu.pvz.entity.client.Wallnut.WallnutRenderer;
@@ -36,6 +37,7 @@ public class PlantsvsZombiesClient {
             EntityRenderers.register(ModEntities.POTATO_MINE.get(), PotatoMineRenderer::new);
             EntityRenderers.register(ModEntities.PEA_SHOOTER.get(), PeaShooterRenderer::new);
             EntityRenderers.register(ModEntities.WALLNUT.get(), WallnutRenderer::new);
+            EntityRenderers.register(ModEntities.CHERRY_BOMB.get(), CherryBombRenderer::new);
 
         }
     }

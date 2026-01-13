@@ -2,6 +2,7 @@ package dev.tucanu.pvz.entity.custom;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -16,6 +17,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class PlantEntity extends Animal
 {
+    public AnimationState explodingAnimationState = new AnimationState();
+    public AnimationState generatingSunAnimationState = new AnimationState();
     protected boolean exploded;
 
     public PlantEntity(EntityType<? extends Animal> type, Level level)
@@ -56,6 +59,10 @@ public class PlantEntity extends Animal
     public void tick()
     {
         super.tick();
+        if (this.level().isClientSide && this.exploded)
+        {
+            this.explodingAnimationState.startIfStopped(this.tickCount);
+        }
     }
 
     @Override

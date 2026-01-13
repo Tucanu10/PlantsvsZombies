@@ -1,9 +1,11 @@
 {
   "itemGroup.pvz": "Plants vs Zombies",
   "item.pvz.pea": "Pea",
-  "item.pvz.pea_shooter": "Pea Shooter",
-  "item.pvz.potato_mine": "Potato Mine",
-  "item.pvz.wallnut": "Wallnut",
+  "item.pvz.pea_shooter": "Pea Shooter Seeds",
+  "item.pvz.potato_mine": "Potato Mine Seeds",
+  "item.pvz.wallnut": "Wallnut Seeds",
+  "item.pvz.cherry_bomb": "Cherry Bomb Seeds",
+  "item.pvz.sunflower": "Sunflower Seeds",
   "item.pvz.ceramic_pot": "Pot",
 
   "item.pvz.ceramic_pot.desc" : "Ever play a game called Whack-a-Zombie?",
