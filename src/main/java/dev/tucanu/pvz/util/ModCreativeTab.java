@@ -1,4 +1,4 @@
-package dev.tucanu.pvz;
+package dev.tucanu.pvz.util;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

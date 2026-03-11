@@ -1,8 +1,10 @@
-package dev.tucanu.pvz;
+package dev.tucanu.pvz.util;
 
 
-import dev.tucanu.pvz.item.custom.SeedPacketItem;
+import dev.tucanu.pvz.PlantsvsZombies;
 import dev.tucanu.pvz.item.armor.CeramicPotArmorItem;
+import dev.tucanu.pvz.item.custom.SeedPacketItem;
+import dev.tucanu.pvz.item.custom.SunItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SnowballItem;
 import net.neoforged.bus.api.IEventBus;
@@ -49,6 +51,10 @@ public class ModItems
 
     public static final DeferredHolder<Item, CeramicPotArmorItem> CERAMIC_POT = ITEMS.register("ceramic_pot",
             () -> new CeramicPotArmorItem(new Item.Properties()));
+
+    public static final DeferredHolder<Item, SunItem> SUN = ITEMS.register("sun",
+            () -> new SunItem(new Item.Properties())
+    );
 
     public static void register(IEventBus bus)
     {

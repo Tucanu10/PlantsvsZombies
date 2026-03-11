@@ -1,5 +1,6 @@
-package dev.tucanu.pvz;
+package dev.tucanu.pvz.util;
 
+import dev.tucanu.pvz.PlantsvsZombies;
 import dev.tucanu.pvz.entity.custom.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;

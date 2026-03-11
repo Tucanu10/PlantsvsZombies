@@ -1,7 +1,7 @@
 package dev.tucanu.pvz.event;
 
-import dev.tucanu.pvz.ModEntities;
-import dev.tucanu.pvz.ModItems;
+import dev.tucanu.pvz.util.ModEntities;
+import dev.tucanu.pvz.util.ModItems;
 import dev.tucanu.pvz.PlantsvsZombies;
 import dev.tucanu.pvz.entity.client.CherryBomb.CherryBombModel;
 import dev.tucanu.pvz.entity.client.CherryBomb.CherryBombRenderer;

@@ -4,6 +4,9 @@ import dev.tucanu.pvz.entity.client.CherryBomb.CherryBombRenderer;
 import dev.tucanu.pvz.entity.client.PeaShooter.PeaShooterRenderer;
 import dev.tucanu.pvz.entity.client.PotatoMine.PotatoMineRenderer;
 import dev.tucanu.pvz.entity.client.Wallnut.WallnutRenderer;
+import dev.tucanu.pvz.util.ModEntities;
+import dev.tucanu.pvz.util.ModParticleProvider;
+import dev.tucanu.pvz.util.ModParticleTypes;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -11,6 +14,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -19,6 +23,7 @@ import static com.mojang.text2speech.Narrator.LOGGER;
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = PlantsvsZombies.MODID, dist = Dist.CLIENT)
 // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+
 @EventBusSubscriber(modid = PlantsvsZombies.MODID, value = Dist.CLIENT)
 public class PlantsvsZombiesClient {
     public PlantsvsZombiesClient(ModContainer container) {
@@ -29,15 +34,21 @@ public class PlantsvsZombiesClient {
     }
 
     @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            // Some client setup code
-            LOGGER.info("Gathering sun for plants!");
+    public static void onClientSetup(FMLClientSetupEvent event)
+    {
+        // Some client setup code
+        LOGGER.info("Gathering sun for plants!");
 
-            EntityRenderers.register(ModEntities.POTATO_MINE.get(), PotatoMineRenderer::new);
-            EntityRenderers.register(ModEntities.PEA_SHOOTER.get(), PeaShooterRenderer::new);
-            EntityRenderers.register(ModEntities.WALLNUT.get(), WallnutRenderer::new);
-            EntityRenderers.register(ModEntities.CHERRY_BOMB.get(), CherryBombRenderer::new);
+        EntityRenderers.register(ModEntities.POTATO_MINE.get(), PotatoMineRenderer::new);
+        EntityRenderers.register(ModEntities.PEA_SHOOTER.get(), PeaShooterRenderer::new);
+        EntityRenderers.register(ModEntities.WALLNUT.get(), WallnutRenderer::new);
+        EntityRenderers.register(ModEntities.CHERRY_BOMB.get(), CherryBombRenderer::new);
 
-        }
     }
+
+    @SubscribeEvent
+    public static void registerParticleProviders(RegisterParticleProvidersEvent event)
+    {
+        event.registerSpriteSet(ModParticleTypes.SUN.get(), ModParticleProvider::new);
+    }
+}
