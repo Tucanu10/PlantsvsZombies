@@ -1,25 +1,39 @@
+# 🧟 Plants vs. Zombies (NeoForge 1.21.1)
 
-Installation information
-=======
+A modern recreation of *Plants vs. Zombies* as a Minecraft mod, built using the **NeoForge** engine. This mod features a custom resource system, intelligent plant AI, and unique combat mechanics.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+---
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## 🚀 Key Features
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+### 🌻 Sun Resource System
+* **Data Persistence:** Sun balance is stored using NeoForge Data Attachments (saved to the player).
+* **Real-time HUD:** A custom screen overlay shows your current Sun.
+* **Syncing:** Custom network packets ensure the client and server always match.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+### 🔫 Advanced Peashooter
+* **Dual Modes:** Shift-Right-Click a Peashooter to toggle:
+    * **Straight Mode:** Fixed cardinal rotation (Turret style).
+    * **Free Range:** 360-degree AI targeting.
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+### 🛡️ Ownership & Security
+* **Great for multiplayer:** Uses a UUID check. Ownership works on both official and offline-mode servers.
+* **Placement Logic:** Plants automatically face the direction the player is looking when placed.
+
+---
+
+## ⌨️ Admin Commands
+
+Use these commands for testing your setup:
+
+* `/sun reset` — Resets your Sun counter to 0.
+* `/sun set <amount>` — Sets your Sun to a specific value (Max 9990).
+
+---
+
+
+---
+
+## 📜 Credits
+Developed by **Tucanu**.
+*Inspired by Plants vs. Zombies by PopCap Games.*
